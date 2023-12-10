@@ -27,3 +27,38 @@ void free_info(info_t *info, int all)
 		}
 		_putchar(BUF_FLUSH);
 	}
+/**
+ * _strcat - concatenates two strings
+ * @dest: destination buffer
+ * @src: source buffer
+ * Return: pointer to destination buffer
+ */
+char *_strcat(char *dest, char *src)
+{
+	char *ret = dest;
+
+	while (*dest)
+
+		dest++;
+	while (*src)
+		*dest++ = *src++;
+	*dest = *src;
+	return (ret);
+}
+
+/**
+ * starts_with - needle starts with haystack
+ * @haystack: search the string
+ * @needle: find substring
+ * Return: address of next char of haystack or NULL
+ */
+char *starts_with(const char *haystack, const char *needle)
+{
+	while (*needle)
+	{
+		if (*needle++ != *haystack++)
+			return (NULL);
+	}
+	return ((char*)haystack);
+}
+
