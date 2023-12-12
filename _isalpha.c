@@ -1,13 +1,17 @@
 #include "shell.h"
 
 /**
- * interactive -interactive mode
- * @info: struct adress
- * Return: 1 if it's interactive mode else 0
+ *_isalpha - checks for alphabetic character
+ *@c: The character to input
+ *Return: 1 if c is alphabetic, 0 otherwise
  */
-int interactive(info_t *info)
+
+int _isalpha(int c)
 {
-	return (isatty(STDIN_FILENO) && info->readfd <= 2);
+        if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+                return (1);
+        else
+                return (0);
 }
 
 /**
@@ -22,20 +26,6 @@ int is_delim(char c, char *delim)
 		if (*delim++ == c)
 			return (1);
 	return (0);
-}
-
-/**
- *_isalpha - checks for alphabetic character
- *@c: The character to input
- *Return: 1 if c is alphabetic, 0 otherwise
- */
-
-int _isalpha(int c)
-{
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return (1);
-	else
-		return (0);
 }
 
 /**
@@ -70,4 +60,14 @@ int _atoi(char *s)
 		output = result;
 
 	return (output);
+}
+
+/**
+ * interactive -interactive mode
+ * @info: struct adress
+ * Return: 1 if it's interactive mode else 0
+ */
+int interactive(info_t *info)
+{
+        return (isatty(STDIN_FILENO) && info->readfd <= 2);
 }

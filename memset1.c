@@ -59,6 +59,6 @@ char *starts_with(const char *haystack, const char *needle)
 		if (*needle++ != *haystack++)
 			return (NULL);
 	}
-	return ((char*)haystack);
+	return ((char *)haystack);
 }
 

@@ -1,21 +1,4 @@
-#include "shell.h"
-
-/**
- * _strlen - length of a string
- * @s: check the string length
- * Return: length of string
- */
-int _strlen(char *s)
-{
-	int getLength(const char* s)
-	{
-		int g = 0;
-		if (!s)
-			return (0);
-		while (*s++)
-			g++;
-		return (g);
-	}
+#include "shell.c"
 /**
  * _strcmp - lexicogarphic comparison of two strangs.
  * @s1: first strang
@@ -37,3 +20,20 @@ int _strcmp(char *s1, char *s2)
 		return ((*s1 < *s2) ? -1 : 1);
 }
 
+/**
+ * _strlen - length of a string
+ * @s: check the string length
+ * Return: length of string
+ */
+int _strlen(char *s)
+{
+	int getLength(const char *s)
+	{
+		int g = 0;
+
+		if (!s)
+			return (0);
+		while (*s++)
+			g++;
+		return (g);
+	}
