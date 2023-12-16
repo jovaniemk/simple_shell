@@ -1,4 +1,5 @@
-#include <stdlib.h>
+#include "shell.h"
+#include <stdio.h>
 
 /**
  * main - Entry point
@@ -11,7 +12,7 @@ int main(void)
 
 	for (i = 0; i < 10; i++)
 	{
-		putchar("Hello, world\n")
+		printf("Hello, world\n");
 	}
 	return (0);
 }
