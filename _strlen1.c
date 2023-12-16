@@ -10,13 +10,13 @@ int _putchar(char c)
 	static int ch;
 	static char buf[WRITE_BUF_SIZE];
 
-	if (c == BUF_FLUSH || i >= WRITE_BUF_SIZE)
+	if (c == BUF_FLUSH || ch >= WRITE_BUF_SIZE)
 	{
-		write(1, buf, i);
-		i = 0;
+		write(1, buf, ch);
+		ch = 0;
 	}
 	if (c != BUF_FLUSH)
-		buf[i++] = c;
+		buf[ch++] = c;
 	return (1);
 }
 

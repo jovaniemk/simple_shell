@@ -1,4 +1,4 @@
-#include "shell.c"
+#include "shell.h"
 /**
  * _strcmp - lexicogarphic comparison of two strangs.
  * @s1: first strang

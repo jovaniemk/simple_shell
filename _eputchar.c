@@ -1,28 +1,6 @@
 #include "shell.h"
 
 /**
- * _eputchar - character c written to standard error
- * @c: the character printed
- *
- * Return: On success 1 and on error -1
- */
-	int _eputchar(char c)
-	{
-	static int i;
-	static char buf[WRITE_BUF_SIZE];
-
-	if (c == BUF_FLUSH)
-		else if (i >= WRITE_BUF_SIZE)
-		{
-			write(2, buf, i);
-			i = 0;
-			if (c != BUF_FLUSH)
-				buf[i] = c;
-			++i;
-		}
-	return (1);
-	}
-/**
  * @str: to be printed string
  * _eputs - input string printer
  * Return: Null
@@ -33,7 +11,7 @@ void _eputs(char *str)
 
 	if (str == NULL)
 		return;
-	while (*(str + n))
+	while (*(str + j))
 	{
 		_eputchar(str[j]);
 		j++;

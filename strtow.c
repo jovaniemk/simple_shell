@@ -80,7 +80,7 @@ char **strtow2(char *str, char d)
 		s[b] = malloc((c + 1) * sizeof(char));
 		if (!s[b])
 		{
-			for (v = 0; c < b; c++)
+			for (n = 0; c < b; c++)
 				free(s[c]);
 			free(s);
 			return (NULL);
